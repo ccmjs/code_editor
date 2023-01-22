@@ -1,2 +1,2 @@
-# json_editor
-ccmjs-based web component for a JSON editor.
+# Code Editor
+ccmjs-based web component for a code editor that uses CodeMirrow 5.
