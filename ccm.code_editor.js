@@ -14,7 +14,10 @@
     config: {
       "css": [ "ccm.load",
         [
-          "./libs/codemirror/foldgutter.css",
+          [
+            "./libs/codemirror/codemirror.css",
+            "./libs/codemirror/foldgutter.css"
+          ],
           "./resources/styles.css"
         ]
       ],
@@ -23,7 +26,6 @@
       "helper": [ "ccm.load", { "url": "./libs/ccm/helper.js", "type": "module" } ],
       "html": [ "ccm.load", { "url": "./resources/templates.js", "type": "module" } ],
       "libs": [ "ccm.load",
-        "./libs/codemirror/codemirror.css",
         [
           "./libs/codemirror/codemirror.js",
           [
