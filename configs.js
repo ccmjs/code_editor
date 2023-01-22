@@ -5,10 +5,43 @@
  */
 
 export const js = {
-  "onfinish": { "log": true },
+  "data": {
+    "input":
+`( function () {
+  return {
+    "abc": true,
+    "foo": {
+      "bar": [
+        1,
+        2,
+        3
+      ]
+    },
+    "xyz": () => console.log( '!' )
+  };
+} )()`
+  },
+  "directly": true,
+  "libs.1.1.5": "./libs/codemirror/javascript.js",
+  "mode": "javascript",
 };
 
 export const json = {
-  "onfinish": { "log": true },
+  "data": {
+    "input":
+`{
+  "abc": true,
+  "foo": {
+    "bar": [
+      1,
+      2,
+      3
+    ]
+  },
+  "xyz": null
+}`
+  },
+  "directly": true,
+  "libs.1.1.5": "./libs/codemirror/javascript.js",
   "settings.mode": { "name": "javascript", "json": true }
 };

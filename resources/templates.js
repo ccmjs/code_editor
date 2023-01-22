@@ -10,7 +10,7 @@ export function main( app ) {
   return html`
     <form @submit=${ e => { e.preventDefault(); app.events.onSubmit(); } }>
       <textarea></textarea>
-      <button>${ app.text.submit }</button>
+      ${ app.submit ? html`<button>${ app.text.submit }</button>` : '' }
     </form>
   `;
 }

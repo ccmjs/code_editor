@@ -5,7 +5,7 @@
  */
 
 #element {
-  overflow: auto;
+  overflow-x: auto;
   padding: 0.5em;
 }
 

@@ -21,7 +21,7 @@
           "./resources/styles.css"
         ]
       ],
-      // "data": { "abc": true, "foo": { "bar": [ 1, 2, 3 ] }, "xyz": () => {} },
+      "data": {},
       // "directly": true,
       "helper": [ "ccm.load", { "url": "./libs/ccm/helper.js", "type": "module" } ],
       "html": [ "ccm.load", { "url": "./resources/templates.js", "type": "module" } ],
@@ -33,12 +33,11 @@
             "./libs/codemirror/closebrackets.js",
             "./libs/codemirror/foldcode.js",
             "./libs/codemirror/foldgutter.js",
-            "./libs/codemirror/javascript.js",
             "./libs/codemirror/matchbrackets.js"
           ]
         ]
       ],
-      // "onfinish": event => console.log( event ),
+      "onfinish": { "log": true },
       // "oninput": event => console.log( event ),
       // "onready": event => console.log( event ),
       // "onstart": event => console.log( event ),
@@ -50,14 +49,14 @@
         "lineNumbers": true,
         "lineWrapping": true,
         "matchBrackets": true,
-        "mode": "javascript",
         "tabSize": 2
       },
       "shadow": "open",
+      "submit": true,
       "text": [ "ccm.load", { "url": "./resources/resources.js#de", "type": "module" } ]
     },
     Instance: function () {
-      let $, data;
+      let $, data, editor;
       this.init = async () => {
         $ = Object.assign( {}, this.ccm.helper, this.helper ); $.use( this.ccm );
       };
@@ -66,32 +65,44 @@
       };
       this.start = async () => {
         data = await $.dataset( this.data );
-        if ( !data.input ) data = { input: data };
         this.html.render( this.html.main( this ), this.element );
-        this.element.querySelector( 'textarea' ).innerHTML = $.stringify( data.input, null, this.settings.tabSize );
-        this.editor = CodeMirror.fromTextArea( this.element.querySelector( 'textarea' ), this.settings );
-        this.editor.setCursor( this.editor.lineCount(), 0 );
-        this.editor.on( 'change', this.events.onInput );
-        this.onstart && await this.onstart( { instance: this } );
+        this.element.querySelector( 'textarea' ).innerHTML = data.input || '';
+        editor = CodeMirror.fromTextArea( this.element.querySelector( 'textarea' ), this.settings );
+        editor.setCursor( editor.lineCount(), 0 );
+        editor.on( 'change', this.events.onInput );
+        this.onstart && await this.onstart( { instance: this, editor } );
       };
       this.events = {
         onInput: () => {
-          try {
-            data.input = $.parse( this.editor.getValue() );
-            data.valid = true;
-          } catch ( err ) {
-            data.valid = false;
+          const value = editor.getValue();
+          if ( this.settings.mode?.json ) {
+            let valid;
+            try {
+              $.parse( value );
+              valid = true;
+              data.input = value;
+            } catch ( e ) {}
+            this.element.querySelector( 'button' ).disabled = !valid;
+            this.element.querySelector( '.CodeMirror' ).classList[ valid ? 'remove' : 'add' ]( 'invalid' );
           }
-          this.element.querySelector( '.CodeMirror' ).classList[ data.valid ? 'remove' : 'add' ]( 'invalid' );
-          this.element.querySelector( 'button' ).disabled = !data.valid;
-          this.oninput && this.oninput( { instance: this } );
+          else
+            data.input = value;
+          this.oninput && this.oninput( { instance: this, editor } );
         },
         onSubmit: () => {
-          delete this.editor;
           $.onFinish( this );
         }
       };
-      this.getValue = () => $.clone( this.directly ? data.input : data );
+      this.getValue = () => {
+        let value = data.input;
+        if ( this.directly ) {
+          if ( this.settings.mode?.json )
+            value = $.parse( data.input );
+          else
+            value = eval( data.input );
+        }
+        return value;
+      }
     }
   };
   let b="ccm."+component.name+(component.version?"-"+component.version.join("."):"")+".js";if(window.ccm&&null===window.ccm.files[b])return window.ccm.files[b]=component;(b=window.ccm&&window.ccm.components[component.name])&&b.ccm&&(component.ccm=b.ccm);"string"===typeof component.ccm&&(component.ccm={url:component.ccm});let c=(component.ccm.url.match(/(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)/)||[""])[0];if(window.ccm&&window.ccm[c])window.ccm[c].component(component);else{var a=document.createElement("script");document.head.appendChild(a);component.ccm.integrity&&a.setAttribute("integrity",component.ccm.integrity);component.ccm.crossorigin&&a.setAttribute("crossorigin",component.ccm.crossorigin);a.onload=function(){(c="latest"?window.ccm:window.ccm[c]).component(component);document.head.removeChild(a)};a.src=component.ccm.url}
