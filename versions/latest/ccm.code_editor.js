@@ -42,6 +42,7 @@
       // "oninput": event => console.log( event ),
       // "onready": event => console.log( event ),
       // "onstart": event => console.log( event ),
+      // "preview": true,
       "settings": {
         "autoRefresh": true,
         "autoCloseBrackets": true,
@@ -75,6 +76,7 @@
         editor = CodeMirror.fromTextArea( this.element.querySelector( 'textarea' ), this.settings );
         editor.setCursor( editor.lineCount(), 0 );
         editor.on( 'change', this.events.onInput );
+        preview();
         this.onstart && await this.onstart( { instance: this, editor } );
       };
       this.events = {
@@ -95,15 +97,16 @@
           this.oninput && this.oninput( { instance: this, editor } );
         },
         onSubmit: () => {
+          preview();
           $.onFinish( this );
         }
       };
       this.getValue = () => {
-        let value = data.input || '';
+        let value = data.input;
         if ( this.directly ) {
           switch ( this.settings.mode ) {
             case 'htmlmixed':
-              value = document.createRange().createContextualFragment( data.input );
+              value = data.input ? document.createRange().createContextualFragment( data.input ) : '';
               break;
             case 'css':
               value = $.html( { tag: 'style', inner: data.input } );
@@ -116,8 +119,16 @@
                 value = $.parse( data.input );
           }
         }
-        return value;
+        return value || '';
       }
+      const preview = () => {
+        if ( !this.directly || !this.preview || this.settings.mode !== 'htmlmixed' ) return;
+        const $preview = this.element.querySelector( '#preview' );
+        const iframe = $.html( { tag: 'iframe', frameBorder: 0, width: '100%', height: '100%' } );
+        iframe.onload = () => iframe.contentWindow.document.body.appendChild( this.getValue() );
+        $preview.innerHTML = '';
+        $preview.appendChild( iframe );
+      };
     }
   };
   let b="ccm."+component.name+(component.version?"-"+component.version.join("."):"")+".js";if(window.ccm&&null===window.ccm.files[b])return window.ccm.files[b]=component;(b=window.ccm&&window.ccm.components[component.name])&&b.ccm&&(component.ccm=b.ccm);"string"===typeof component.ccm&&(component.ccm={url:component.ccm});let c=(component.ccm.url.match(/(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)/)||[""])[0];if(window.ccm&&window.ccm[c])window.ccm[c].component(component);else{var a=document.createElement("script");document.head.appendChild(a);component.ccm.integrity&&a.setAttribute("integrity",component.ccm.integrity);component.ccm.crossorigin&&a.setAttribute("crossorigin",component.ccm.crossorigin);a.onload=function(){(c="latest"?window.ccm:window.ccm[c]).component(component);document.head.removeChild(a)};a.src=component.ccm.url}

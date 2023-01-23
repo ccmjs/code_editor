@@ -5,8 +5,14 @@
  */
 
 #element {
+  margin: 0.5em;
   overflow-x: auto;
-  padding: 0.5em;
+}
+
+form > div {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax( 45ch, 1fr ) );
+  gap: 0.5em;
 }
 
 .CodeMirror {
@@ -26,4 +32,10 @@ button {
 
 button:disabled {
   cursor: not-allowed;
+}
+
+#preview {
+  border: 1px solid #eee;
+  border-radius: 0.5em;
+  overflow: hidden;
 }

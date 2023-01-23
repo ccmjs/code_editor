@@ -7,30 +7,20 @@
 export const html = {
   "data": {
     "input":
-`<header>
-  <div id="logo"></div>
-  <div id="title"></div>
-  <div id="login"></div>
-</header>
-<main>
-  <nav></nav>
-  <section>
-    <article>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.
-    </article>
-    <article>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
-    </article>
-  </section>
-  <aside></aside>
-</main>
-<footer></footer>`
+`<b>Welcome</b> 👋
+<p>
+  This is an example of an HTML editor.
+</p>
+<p>
+  Click the button to see the result!
+</p>`
   },
   "directly": true,
   "libs.1.1.5": "./libs/codemirror/xml.js",
   "libs.1.1.6": "./libs/codemirror/xml-fold.js",
   "libs.1.1.7": "./libs/codemirror/matchtags.js",
   "libs.1.1.8": "./libs/codemirror/htmlmixed.js",
+  "preview": true,
   "settings.matchTags": true,
   "settings.mode": "htmlmixed"
 };
@@ -101,34 +91,75 @@ export const mixed = {
   "data": {
     "input":
 `<style>
-  body: {
-    color: limegreen;
+  body {
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    height: 100%;
+  }
+  header, footer {
+    background-color: #aaa;
+    padding: 0.2em;
+  }
+  main {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+  }
+  nav {
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+  }
+  nav a {
+    padding: 0.3em 0.5em;
+    cursor: pointer;
+  }
+  nav a:hover {
+    background-color: #bbb;
+  }
+  section {
+    text-align: left;
+  }
+  article {
+    padding: 0.3em 0.5em;
+  }
+  aside {
+    background-color: #ccc;
+    padding: 0.2em;
   }
 </style>
-<header>
-  <div id="logo"></div>
-  <div id="title"></div>
-  <div id="login"></div>
-</header>
-<main>
-  <nav></nav>
-  <section>
-    <article>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.
-    </article>
-    <article>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
-    </article>
-  </section>
-  <aside></aside>
-</main>
-<footer></footer>
-<script>
-  function sayHello( name ) {
-    alert( 'Hello ' + name + '!' );
-  }
-  sayHello( prompt( 'Name:' ) );
-</script>`
+<body>
+  <header>HEADER</header>
+  <main>
+    <nav>
+      <a>Start</a>
+      <a>About</a>
+    </nav>
+    <section>
+      <article>
+        <b>Welcome</b> 👋
+        <p>
+          This is an example of a mixed editor for HTML, CSS and JS.
+        </p>
+        <p>
+          Click the button to see the result!
+        </p>
+        <button>Say Hello</button>
+      </article>
+    </section>
+    <aside>ASIDE</aside>
+  </main>
+  <footer>FOOTER</footer>
+  <script>
+    document.querySelector( 'button' ).addEventListener( 'click', sayHello );
+    function sayHello() {
+      const name = prompt( 'Name:' );
+      alert( 'Hello ' + name + ' 🙂' );
+    }
+  </script>
+</body>`
   },
   "directly": true,
   "libs.1.1.5": "./libs/codemirror/xml.js",
@@ -137,6 +168,7 @@ export const mixed = {
   "libs.1.1.8": "./libs/codemirror/htmlmixed.js",
   "libs.1.1.9": "./libs/codemirror/css.js",
   "libs.1.1.10": "./libs/codemirror/javascript.js",
+  "preview": true,
   "settings.matchTags": true,
   "settings.mode": "htmlmixed"
 };
