@@ -4,35 +4,36 @@
  * @overview <i>ccmjs</i>-based web component for a code editor that uses CodeMirrow 5.
  * @author André Kless <andre.kless@web.de> 2023
  * @license The MIT License (MIT)
+ * @version latest (v1.0.0)
  */
 
 ( () => {
   const component = {
     name: 'code_editor',
-    ccm: './libs/ccm/ccm.js',
+    ccm: 'https://ccmjs.github.io/ccm/versions/ccm-27.4.2.min.js',
     config: {
       "css": [ "ccm.load",
         [
           [
-            "./libs/codemirror/codemirror.css",
-            "./libs/codemirror/foldgutter.css"
+            "https://ccmjs.github.io/libs/codemirror-5/codemirror.min.css",
+            "https://ccmjs.github.io/libs/codemirror-5/foldgutter.min.css"
           ],
-          "./resources/styles.css"
+          "https://ccmjs.github.io/code_editor/versions/latest/resources/styles.min.css"
         ]
       ],
       "data": {},
       // "directly": true,
-      "helper": [ "ccm.load", { "url": "./libs/ccm/helper.js", "type": "module" } ],
-      "html": [ "ccm.load", { "url": "./resources/templates.js", "type": "module" } ],
+      "helper": [ "ccm.load", "https://ccmjs.github.io/ccm/helper/helper-8.4.2.min.mjs" ],
+      "html": [ "ccm.load", "https://ccmjs.github.io/code_editor/versions/latest/resources/templates.min.mjs" ],
       "libs": [ "ccm.load",
         [
-          "./libs/codemirror/codemirror.js",
+          "https://ccmjs.github.io/libs/codemirror-5/codemirror.min.js",
           [
-            "./libs/codemirror/brace-fold.js",
-            "./libs/codemirror/closebrackets.js",
-            "./libs/codemirror/foldcode.js",
-            "./libs/codemirror/foldgutter.js",
-            "./libs/codemirror/matchbrackets.js"
+            "https://ccmjs.github.io/libs/codemirror-5/brace-fold.min.js",
+            "https://ccmjs.github.io/libs/codemirror-5/closebrackets.min.js",
+            "https://ccmjs.github.io/libs/codemirror-5/foldcode.min.js",
+            "https://ccmjs.github.io/libs/codemirror-5/foldgutter.min.js",
+            "https://ccmjs.github.io/libs/codemirror-5/matchbrackets.min.js"
           ]
         ]
       ],
@@ -52,7 +53,7 @@
       },
       "shadow": "open",
       "submit": true,
-      "text": [ "ccm.load", { "url": "./resources/resources.js#en", "type": "module" } ]
+      "text": [ "ccm.load", "https://ccmjs.github.io/code_editor/versions/latest/resources/resources.min.mjs#en" ]
     },
     Instance: function () {
       let $, data, editor;

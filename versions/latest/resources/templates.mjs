@@ -2,9 +2,10 @@
  * @overview HTML templates of <i>ccmjs</i>-based web component for a code editor that uses CodeMirror 5.
  * @author André Kless <andre.kless@web.de> 2023
  * @license The MIT License (MIT)
+ * @version latest (v1)
  */
 
-import { html, render } from './../libs/lit/lit.js';
+import { html, render } from 'https://ccmjs.github.io/libs/lit/lit.min.js';
 export { render };
 
 export function main( app ) {
