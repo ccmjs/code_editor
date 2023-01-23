@@ -29,6 +29,7 @@
         [
           "https://ccmjs.github.io/libs/codemirror-5/codemirror.min.js",
           [
+            "https://ccmjs.github.io/libs/codemirror-5/autorefresh.min.js",
             "https://ccmjs.github.io/libs/codemirror-5/brace-fold.min.js",
             "https://ccmjs.github.io/libs/codemirror-5/closebrackets.min.js",
             "https://ccmjs.github.io/libs/codemirror-5/foldcode.min.js",
@@ -44,6 +45,7 @@
       "settings": {
         "autoCloseBrackets": true,
         "autofocus": false,
+        "autoRefresh": true,
         "foldGutter": true,
         "gutters": [ "CodeMirror-linenumbers", "CodeMirror-foldgutter" ],
         "lineNumbers": true,

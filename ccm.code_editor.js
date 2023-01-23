@@ -28,6 +28,7 @@
         [
           "./libs/codemirror/codemirror.js",
           [
+            "./libs/codemirror/autorefresh.js",
             "./libs/codemirror/brace-fold.js",
             "./libs/codemirror/closebrackets.js",
             "./libs/codemirror/foldcode.js",
@@ -41,6 +42,7 @@
       // "onready": event => console.log( event ),
       // "onstart": event => console.log( event ),
       "settings": {
+        "autoRefresh": true,
         "autoCloseBrackets": true,
         "autofocus": false,
         "foldGutter": true,
