@@ -68,6 +68,7 @@
         data = await $.dataset( this.data );
         this.html.render( this.html.main( this ), this.element );
         this.element.querySelector( 'textarea' ).innerHTML = data.input || '';
+        $.remove( this.element.querySelector( '.CodeMirror' ) );
         editor = CodeMirror.fromTextArea( this.element.querySelector( 'textarea' ), this.settings );
         editor.setCursor( editor.lineCount(), 0 );
         editor.on( 'change', this.events.onInput );
