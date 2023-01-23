@@ -4,10 +4,20 @@
 <meta name="author" content="André Kless <andre.kless@web.de> 2023">
 <meta name="license" content="The MIT License (MIT)">
 <title>Code Editor</title>
-<style>body { margin: 0; }</style>
 <script src="./ccm.code_editor.js"></script>
 <ccm-code_editor></ccm-code_editor>
 <hr>
+<h1>HTML</h1>
+<ccm-code_editor src='["ccm.load",{"url":"./configs.js#html","type":"module"}]'></ccm-code_editor>
+<hr>
+<h1>CSS</h1>
+<ccm-code_editor src='["ccm.load",{"url":"./configs.js#css","type":"module"}]'></ccm-code_editor>
+<hr>
+<h1>JS</h1>
 <ccm-code_editor src='["ccm.load",{"url":"./configs.js#js","type":"module"}]'></ccm-code_editor>
 <hr>
+<h1>JSON</h1>
 <ccm-code_editor src='["ccm.load",{"url":"./configs.js#json","type":"module"}]'></ccm-code_editor>
+<hr>
+<h1>Mixed HTML/CSS/JS</h1>
+<ccm-code_editor src='["ccm.load",{"url":"./configs.js#mixed","type":"module"}]'></ccm-code_editor>

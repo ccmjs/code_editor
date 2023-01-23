@@ -94,12 +94,22 @@
         }
       };
       this.getValue = () => {
-        let value = data.input;
+        let value = data.input || '';
         if ( this.directly ) {
-          if ( this.settings.mode?.json )
-            value = $.parse( data.input );
-          else
-            value = eval( data.input );
+          switch ( this.settings.mode ) {
+            case 'htmlmixed':
+              value = document.createRange().createContextualFragment( data.input );
+              break;
+            case 'css':
+              value = $.html( { tag: 'style', inner: data.input } );
+              break;
+            case 'javascript':
+              value = eval( data.input );
+              break;
+            default:
+              if ( this.settings.mode?.json )
+                value = $.parse( data.input );
+          }
         }
         return value;
       }
