@@ -28,10 +28,10 @@ export const html = {
 <footer></footer>`
   },
   "directly": true,
-  "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/xml.js",
-  "libs.1.1.6": "https://ccmjs.github.io/libs/codemirror-5/xml-fold.js",
-  "libs.1.1.7": "https://ccmjs.github.io/libs/codemirror-5/matchtags.js",
-  "libs.1.1.8": "https://ccmjs.github.io/libs/codemirror-5/htmlmixed.js",
+  "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/xml.min.js",
+  "libs.1.1.6": "https://ccmjs.github.io/libs/codemirror-5/xml-fold.min.js",
+  "libs.1.1.7": "https://ccmjs.github.io/libs/codemirror-5/matchtags.min.js",
+  "libs.1.1.8": "https://ccmjs.github.io/libs/codemirror-5/htmlmixed.min.js",
   "settings.matchTags": true,
   "settings.mode": "htmlmixed"
 };
@@ -52,7 +52,7 @@ div {
 }`
   },
   "directly": true,
-  "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/css.js",
+  "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/css.min.js",
   "settings.mode": "css"
 };
 
@@ -74,7 +74,7 @@ export const js = {
 } )()`
   },
   "directly": true,
-  "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/javascript.js",
+  "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/javascript.min.js",
   "settings.mode": "javascript",
 };
 
@@ -94,7 +94,7 @@ export const json = {
 }`
   },
   "directly": true,
-  "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/javascript.js",
+  "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/javascript.min.js",
   "settings.mode": { "name": "javascript", "json": true }
 };
 
@@ -132,12 +132,12 @@ export const mixed = {
 </script>`
   },
   "directly": true,
-  "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/xml.js",
-  "libs.1.1.6": "https://ccmjs.github.io/libs/codemirror-5/xml-fold.js",
-  "libs.1.1.7": "https://ccmjs.github.io/libs/codemirror-5/matchtags.js",
-  "libs.1.1.8": "https://ccmjs.github.io/libs/codemirror-5/htmlmixed.js",
-  "libs.1.1.9": "https://ccmjs.github.io/libs/codemirror-5/css.js",
-  "libs.1.1.10": "https://ccmjs.github.io/libs/codemirror-5/javascript.js",
+  "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/xml.min.js",
+  "libs.1.1.6": "https://ccmjs.github.io/libs/codemirror-5/xml-fold.min.js",
+  "libs.1.1.7": "https://ccmjs.github.io/libs/codemirror-5/matchtags.min.js",
+  "libs.1.1.8": "https://ccmjs.github.io/libs/codemirror-5/htmlmixed.min.js",
+  "libs.1.1.9": "https://ccmjs.github.io/libs/codemirror-5/css.min.js",
+  "libs.1.1.10": "https://ccmjs.github.io/libs/codemirror-5/javascript.min.js",
   "settings.matchTags": true,
   "settings.mode": "htmlmixed"
 };
