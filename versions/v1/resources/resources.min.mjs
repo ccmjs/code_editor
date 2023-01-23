@@ -1,0 +1,2 @@
+export const de={submit:"Abschicken"};export const en={submit:"Submit"};
+//# sourceMappingURL=resources.min.mjs.map
