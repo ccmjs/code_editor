@@ -66,6 +66,8 @@
       };
       this.start = async () => {
         data = await $.dataset( this.data );
+        if ( this.settings.mode?.json && !data.input )
+          data = { input: JSON.stringify( data.input, null, this.settings.tabSize ) };
         this.html.render( this.html.main( this ), this.element );
         this.element.querySelector( 'textarea' ).innerHTML = data.input || '';
         $.remove( this.element.querySelector( '.CodeMirror' ) );

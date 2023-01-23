@@ -43,9 +43,9 @@
       // "onready": event => console.log( event ),
       // "onstart": event => console.log( event ),
       "settings": {
+        "autoRefresh": true,
         "autoCloseBrackets": true,
         "autofocus": false,
-        "autoRefresh": true,
         "foldGutter": true,
         "gutters": [ "CodeMirror-linenumbers", "CodeMirror-foldgutter" ],
         "lineNumbers": true,
@@ -67,6 +67,8 @@
       };
       this.start = async () => {
         data = await $.dataset( this.data );
+        if ( this.settings.mode?.json && !data.input )
+          data = { input: JSON.stringify( data.input, null, this.settings.tabSize ) };
         this.html.render( this.html.main( this ), this.element );
         this.element.querySelector( 'textarea' ).innerHTML = data.input || '';
         $.remove( this.element.querySelector( '.CodeMirror' ) );
