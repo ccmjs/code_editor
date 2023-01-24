@@ -232,10 +232,3 @@ export const json = {
     "submit": "Log"
   }
 };
-
-export const dms = {
-  "directly": true,
-  "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/javascript.min.js",
-  "settings.mode": { "name": "javascript", "json": true },
-  "submit": false
-};

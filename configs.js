@@ -231,10 +231,3 @@ export const json = {
     "submit": "Log"
   }
 };
-
-export const dms = {
-  "directly": true,
-  "libs.1.1.5": "./libs/codemirror/javascript.js",
-  "settings.mode": { "name": "javascript", "json": true },
-  "submit": false
-};
