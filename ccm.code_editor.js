@@ -131,7 +131,7 @@
           const document = iframe.contentWindow.document;
           mode === 'css' && document.head.appendChild( value );
           mode === 'htmlmixed' && document.head.appendChild( fragment( this.preview ) );
-          document.body.appendChild( mode === 'htmlmixed' ? value : fragment( this.preview ) );
+          document.body.appendChild( mode === 'htmlmixed' ? value || $.html( {} ) : fragment( this.preview ) );
           mode === 'javascript' && document.body.appendChild( value );
         };
         $preview.innerHTML = '';
