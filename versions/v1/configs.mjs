@@ -25,7 +25,7 @@ export const html = {
   "settings.matchTags": true,
   "settings.mode": "htmlmixed",
   "text": {
-    "submit": "Run"
+    "submit": "Run >>"
   }
 };
 
@@ -54,7 +54,7 @@ p {
 </p>`,
   "settings.mode": "css",
   "text": {
-    "submit": "Run"
+    "submit": "Run >>"
   }
 };
 
@@ -79,7 +79,7 @@ function sayHello() {
 <button>Say Hello</button>`,
   "settings.mode": "javascript",
   "text": {
-    "submit": "Run"
+    "submit": "Run >>"
   }
 };
 
@@ -191,6 +191,6 @@ export const mixed = {
   "settings.matchTags": true,
   "settings.mode": "htmlmixed",
   "text": {
-    "submit": "Run"
+    "submit": "Run >>"
   }
 };
