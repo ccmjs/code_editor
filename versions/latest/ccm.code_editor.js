@@ -89,7 +89,8 @@
               valid = true;
               data.input = value;
             } catch ( e ) {}
-            this.element.querySelector( 'button' ).disabled = !valid;
+            if ( this.submit )
+              this.element.querySelector( 'button' ).disabled = !valid;
             this.element.querySelector( '.CodeMirror' ).classList[ valid ? 'remove' : 'add' ]( 'invalid' );
           }
           else
