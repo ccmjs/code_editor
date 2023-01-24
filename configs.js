@@ -82,29 +82,6 @@ function sayHello() {
   }
 };
 
-export const json = {
-  "data": {
-    "input":
-`{
-  "abc": true,
-  "foo": {
-    "bar": [
-      1,
-      2,
-      3
-    ]
-  },
-  "xyz": null
-}`
-  },
-  "directly": true,
-  "libs.1.1.5": "./libs/codemirror/javascript.js",
-  "settings.mode": { "name": "javascript", "json": true },
-  "text": {
-    "submit": "Log"
-  }
-};
-
 export const mixed = {
   "data": {
     "input":
@@ -192,4 +169,31 @@ export const mixed = {
   "text": {
     "submit": "Run >>"
   }
+};
+
+export const json = {
+  "data": {
+    "abc": true,
+    "foo": {
+      "bar": [
+        1,
+        2,
+        3
+      ]
+    },
+    "xyz": null
+  },
+  "directly": true,
+  "libs.1.1.5": "./libs/codemirror-5/javascript.min.js",
+  "settings.mode": { "name": "javascript", "json": true },
+  "text": {
+    "submit": "Log"
+  }
+};
+
+export const dms = {
+  "directly": true,
+  "libs.1.1.5": "./libs/codemirror-5/javascript.min.js",
+  "settings.mode": { "name": "javascript", "json": true },
+  "submit": false
 };
