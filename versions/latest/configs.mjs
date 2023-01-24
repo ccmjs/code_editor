@@ -12,7 +12,7 @@ export const html = {
   This is an example of an HTML editor.
 </p>
 <p>
-  Click the button to see the result!
+  Click the [Run >>] button below the code editor to update the result!
 </p>`
   },
   "directly": true,
@@ -49,7 +49,7 @@ p {
       This is an example of an CSS editor.
     </p>
     <p>
-      Click the button to see the result!
+      Click the [Run >>] button below the code editor to update the result!
     </p>
   `,
   "settings.mode": "css",
@@ -75,7 +75,7 @@ function sayHello() {
       This is an example of an JS editor.
     </p>
     <p>
-      Click the 'run' button in the editor to see the result!
+      Click the [Run >>] button below the code editor to update the result!
     </p>
     <button>Say Hello</button>
   `,
@@ -141,7 +141,7 @@ export const mixed = {
           This is an example of a mixed editor for HTML, CSS and JS.
         </p>
         <p>
-          Click the 'run' button in the editor to see the result!
+          Click the [Run >>] button below the code editor to update the result!
         </p>
         <button>Say Hello</button>
       </article>
@@ -190,7 +190,7 @@ export const bootstrap = {
           This is an example of a mixed editor for HTML, CSS and JS.
         </p>
         <p>
-          Click the button to see the result!
+          Click the [Run >>] button below the code editor to update the result!
         </p>
       </article>
     </section>
@@ -222,6 +222,7 @@ export const json = {
         3
       ]
     },
+    "hint": "Click the [Log] button below the code editor to see the result in the developer console!",
     "xyz": null
   },
   "directly": true,
