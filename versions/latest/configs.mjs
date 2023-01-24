@@ -7,8 +7,7 @@
 
 export const html = {
   "data": {
-    "input":
-`<b>Welcome</b> 👋
+    "input": `<b>Welcome</b> 👋
 <p>
   This is an example of an HTML editor.
 </p>
@@ -31,8 +30,7 @@ export const html = {
 
 export const css = {
   "data": {
-    "input":
-`body {
+    "input": `body {
   background-color: #ccc;
   font-family: Arial, sans-serif;
 }
@@ -45,13 +43,15 @@ p {
   },
   "directly": true,
   "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/css.min.js",
-  "preview": `<b>Welcome</b> 👋
-<p>
-  This is an example of an CSS editor.
-</p>
-<p>
-  Click the button to see the result!
-</p>`,
+  "preview": `
+    <b>Welcome</b> 👋
+    <p>
+      This is an example of an CSS editor.
+    </p>
+    <p>
+      Click the button to see the result!
+    </p>
+  `,
   "settings.mode": "css",
   "text": {
     "submit": "Run >>"
@@ -69,14 +69,16 @@ function sayHello() {
   },
   "directly": true,
   "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/javascript.min.js",
-  "preview": `<b>Welcome</b> 👋
-<p>
-  This is an example of an JS editor.
-</p>
-<p>
-  Click the button to see the result!
-</p>
-<button>Say Hello</button>`,
+  "preview": `
+    <b>Welcome</b> 👋
+    <p>
+      This is an example of an JS editor.
+    </p>
+    <p>
+      Click the 'run' button in the editor to see the result!
+    </p>
+    <button>Say Hello</button>
+  `,
   "settings.mode": "javascript",
   "text": {
     "submit": "Run >>"
@@ -85,8 +87,7 @@ function sayHello() {
 
 export const mixed = {
   "data": {
-    "input":
-`<style>
+    "input": `<style>
   body {
     margin: 0;
     display: grid;
@@ -140,7 +141,7 @@ export const mixed = {
           This is an example of a mixed editor for HTML, CSS and JS.
         </p>
         <p>
-          Click the button to see the result!
+          Click the 'run' button in the editor to see the result!
         </p>
         <button>Say Hello</button>
       </article>
@@ -165,6 +166,45 @@ export const mixed = {
   "libs.1.1.9": "https://ccmjs.github.io/libs/codemirror-5/css.js",
   "libs.1.1.10": "https://ccmjs.github.io/libs/codemirror-5/javascript.js",
   "preview": true,
+  "settings.matchTags": true,
+  "settings.mode": "htmlmixed",
+  "text": {
+    "submit": "Run >>"
+  }
+};
+
+export const bootstrap = {
+  "data": {
+    "input": `
+<div class="d-flex flex-column h-100">
+  <header class="bg-secondary text-center">HEADER</header>
+  <main class="h-100 d-flex w-100">
+    <nav class="d-flex flex-column bg-light">
+      <a class="btn btn-link">Start</a>
+      <a class="btn btn-link">About</a>
+    </nav>
+    <section class="w-100">
+      <article class="p-3">
+        <b>Welcome</b> 👋
+        <p class="pt-3">
+          This is an example of a mixed editor for HTML, CSS and JS.
+        </p>
+        <p>
+          Click the button to see the result!
+        </p>
+      </article>
+    </section>
+    <aside class="bg-light p-2">ASIDE</aside>
+  </main>
+  <footer class="bg-secondary text-center">FOOTER</footer>
+</div>`
+  },
+  "directly": true,
+  "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/xml.min.js",
+  "libs.1.1.6": "https://ccmjs.github.io/libs/codemirror-5/xml-fold.min.js",
+  "libs.1.1.7": "https://ccmjs.github.io/libs/codemirror-5/matchtags.min.js",
+  "libs.1.1.8": "https://ccmjs.github.io/libs/codemirror-5/htmlmixed.min.js",
+  "preview": `<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">`,
   "settings.matchTags": true,
   "settings.mode": "htmlmixed",
   "text": {
