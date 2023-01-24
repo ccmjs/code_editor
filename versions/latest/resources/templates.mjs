@@ -13,7 +13,7 @@ export function main( app ) {
     <form @submit=${ e => { e.preventDefault(); app.events.onSubmit(); } }>
       <div>
         <textarea></textarea>
-        ${ app.directly && app.preview && app.settings.mode === 'htmlmixed' ? html`<div id="preview"></div>` : '' }
+        ${ app.directly && app.preview ? html`<div id="preview"></div>` : '' }
       </div>
       ${ app.submit ? html`<button>${ app.text.submit }</button>` : '' }
     </form>

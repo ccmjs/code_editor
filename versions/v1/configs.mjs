@@ -23,49 +23,64 @@ export const html = {
   "libs.1.1.8": "https://ccmjs.github.io/libs/codemirror-5/htmlmixed.min.js",
   "preview": true,
   "settings.matchTags": true,
-  "settings.mode": "htmlmixed"
+  "settings.mode": "htmlmixed",
+  "text": {
+    "submit": "Run"
+  }
 };
 
 export const css = {
   "data": {
     "input":
 `body {
-  margin: 0;
-  font-size: large;
-  color: limegreen;
+  background-color: #ccc;
+  font-family: Arial, sans-serif;
 }
-
-div {
-  padding: 0.5em;
-  border: 1px solid black;
-  border-radius: 5px;
+b {
+  text-decoration: underline;
+}
+p {
+  font-size: smaller;
 }`
   },
   "directly": true,
   "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/css.min.js",
-  "settings.mode": "css"
+  "preview": `<b>Welcome</b> 👋
+<p>
+  This is an example of an CSS editor.
+</p>
+<p>
+  Click the button to see the result!
+</p>`,
+  "settings.mode": "css",
+  "text": {
+    "submit": "Run"
+  }
 };
 
 export const js = {
   "data": {
     "input":
-`( function () {
-  return {
-    "abc": true,
-    "foo": {
-      "bar": [
-        1,
-        2,
-        3
-      ]
-    },
-    "xyz": () => console.log( '!' )
-  };
-} )()`
+`document.querySelector( 'button' ).addEventListener( 'click', sayHello );
+function sayHello() {
+  const name = prompt( 'Name:' );
+  alert( 'Hello ' + name + ' 🙂' );
+}`
   },
   "directly": true,
   "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/javascript.min.js",
+  "preview": `<b>Welcome</b> 👋
+<p>
+  This is an example of an JS editor.
+</p>
+<p>
+  Click the button to see the result!
+</p>
+<button>Say Hello</button>`,
   "settings.mode": "javascript",
+  "text": {
+    "submit": "Run"
+  }
 };
 
 export const json = {
@@ -85,7 +100,10 @@ export const json = {
   },
   "directly": true,
   "libs.1.1.5": "https://ccmjs.github.io/libs/codemirror-5/javascript.min.js",
-  "settings.mode": { "name": "javascript", "json": true }
+  "settings.mode": { "name": "javascript", "json": true },
+  "text": {
+    "submit": "Log"
+  }
 };
 
 export const mixed = {
@@ -171,5 +189,8 @@ export const mixed = {
   "libs.1.1.10": "https://ccmjs.github.io/libs/codemirror-5/javascript.js",
   "preview": true,
   "settings.matchTags": true,
-  "settings.mode": "htmlmixed"
+  "settings.mode": "htmlmixed",
+  "text": {
+    "submit": "Run"
+  }
 };

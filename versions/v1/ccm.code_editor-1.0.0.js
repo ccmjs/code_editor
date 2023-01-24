@@ -107,7 +107,7 @@
         if ( this.directly ) {
           switch ( this.settings.mode ) {
             case 'htmlmixed':
-              value = data.input ? document.createRange().createContextualFragment( data.input ) : '';
+              value = data.input ? fragment( data.input ) : '';
               break;
             case 'css':
               value = $.html( { tag: 'style', inner: data.input } );
@@ -123,13 +123,21 @@
         return value || '';
       }
       const preview = () => {
-        if ( !this.directly || !this.preview || this.settings.mode !== 'htmlmixed' ) return;
+        const mode = this.settings.mode;
+        if ( !this.directly || !this.preview ) return;
         const $preview = this.element.querySelector( '#preview' );
         const iframe = $.html( { tag: 'iframe', frameBorder: 0, width: '100%', height: '100%' } );
-        iframe.onload = () => iframe.contentWindow.document.body.appendChild( this.getValue() );
+        const value = mode === 'javascript' ? $.html( { tag: 'script', inner: data.input } ) : this.getValue();
+        iframe.onload = () => {
+          const document = iframe.contentWindow.document;
+          mode === 'css' && document.head.appendChild( value );
+          document.body.appendChild( mode === 'htmlmixed' ? value : fragment( this.preview ) );
+          mode === 'javascript' && document.body.appendChild( value );
+        };
         $preview.innerHTML = '';
         $preview.appendChild( iframe );
       };
+      const fragment = str => document.createRange().createContextualFragment( str );
     }
   };
   let b="ccm."+component.name+(component.version?"-"+component.version.join("."):"")+".js";if(window.ccm&&null===window.ccm.files[b])return window.ccm.files[b]=component;(b=window.ccm&&window.ccm.components[component.name])&&b.ccm&&(component.ccm=b.ccm);"string"===typeof component.ccm&&(component.ccm={url:component.ccm});let c=(component.ccm.url.match(/(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)/)||[""])[0];if(window.ccm&&window.ccm[c])window.ccm[c].component(component);else{var a=document.createElement("script");document.head.appendChild(a);component.ccm.integrity&&a.setAttribute("integrity",component.ccm.integrity);component.ccm.crossorigin&&a.setAttribute("crossorigin",component.ccm.crossorigin);a.onload=function(){(c="latest"?window.ccm:window.ccm[c]).component(component);document.head.removeChild(a)};a.src=component.ccm.url}
