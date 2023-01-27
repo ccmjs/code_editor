@@ -112,7 +112,7 @@
               value = $.html( { tag: 'style', inner: data.input } );
               break;
             case 'javascript':
-              value = eval( data.input );
+              value = $.html( { tag: 'script', inner: data.input } );
               break;
             default:
               if ( this.settings.mode?.json )
