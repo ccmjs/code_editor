@@ -4,26 +4,27 @@
  * @overview <i>ccmjs</i>-based web component for a code editor that uses CodeMirrow 5.
  * @author André Kless <andre.kless@web.de> 2023
  * @license The MIT License (MIT)
+ * @version 1.0.0
  */
 
 ( () => {
   const component = {
     name: 'code_editor',
-    ccm: './libs/ccm/ccm.js',
+    ccm: '././libs/ccm/ccm.js',
     config: {
       "css": [ "ccm.load",
         [
           [
-            "./libs/codemirror/codemirror.css",
-            "./libs/codemirror/foldgutter.css"
+            "././libs/codemirror/codemirror.css",
+            "././libs/codemirror/foldgutter.css"
           ],
-          "./resources/styles.css"
+          "././resources/styles.css"
         ]
       ],
       "data": {},
       // "directly": true,
-      "helper": [ "ccm.load", { "url": "./libs/ccm/helper.js", "type": "module" } ],
-      "html": [ "ccm.load", { "url": "./resources/templates.js", "type": "module" } ],
+      "helper": [ "ccm.load", { "url": "././libs/ccm/helper.js", "type": "module" } ],
+      "html": [ "ccm.load", { "url": "././resources/templates.js", "type": "module" } ],
       "libs": [ "ccm.load",
         [
           "./libs/codemirror/codemirror.js",
@@ -55,7 +56,7 @@
       },
       "shadow": "open",
       "submit": true,
-      "text": [ "ccm.load", { "url": "./resources/resources.js#en", "type": "module" } ]
+      "text": [ "ccm.load", { "url": "././resources/resources.js#en", "type": "module" } ]
     },
     Instance: function () {
       let $, data, editor;

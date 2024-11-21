@@ -4,7 +4,7 @@
  * @license The MIT License (MIT)
  */
 
-import { html, render } from './../libs/lit/lit.js';
+import { html, render } from '././../libs/lit/lit.js';
 export { render };
 
 export function main( app ) {

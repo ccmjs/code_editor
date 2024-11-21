@@ -15,10 +15,10 @@ export const html = {
 </p>`
   },
   "directly": true,
-  "libs.1.1.5": "./libs/codemirror/xml.js",
-  "libs.1.1.6": "./libs/codemirror/xml-fold.js",
-  "libs.1.1.7": "./libs/codemirror/matchtags.js",
-  "libs.1.1.8": "./libs/codemirror/htmlmixed.js",
+  "libs.1.1.5": "././libs/codemirror/xml.js",
+  "libs.1.1.6": "././libs/codemirror/xml-fold.js",
+  "libs.1.1.7": "././libs/codemirror/matchtags.js",
+  "libs.1.1.8": "././libs/codemirror/htmlmixed.js",
   "preview": true,
   "settings.matchTags": true,
   "settings.mode": "htmlmixed",
@@ -41,7 +41,7 @@ p {
 }`
   },
   "directly": true,
-  "libs.1.1.5": "./libs/codemirror/css.js",
+  "libs.1.1.5": "././libs/codemirror/css.js",
   "preview": `
     <b>Welcome</b> 👋
     <p>
@@ -67,7 +67,7 @@ function sayHello() {
 }`
   },
   "directly": true,
-  "libs.1.1.5": "./libs/codemirror/javascript.js",
+  "libs.1.1.5": "././libs/codemirror/javascript.js",
   "preview": `
     <b>Welcome</b> 👋
     <p>
@@ -158,12 +158,12 @@ export const mixed = {
 </body>`
   },
   "directly": true,
-  "libs.1.1.5": "./libs/codemirror/xml.js",
-  "libs.1.1.6": "./libs/codemirror/xml-fold.js",
-  "libs.1.1.7": "./libs/codemirror/matchtags.js",
-  "libs.1.1.8": "./libs/codemirror/htmlmixed.js",
-  "libs.1.1.9": "./libs/codemirror/css.js",
-  "libs.1.1.10": "./libs/codemirror/javascript.js",
+  "libs.1.1.5": "././libs/codemirror/xml.js",
+  "libs.1.1.6": "././libs/codemirror/xml-fold.js",
+  "libs.1.1.7": "././libs/codemirror/matchtags.js",
+  "libs.1.1.8": "././libs/codemirror/htmlmixed.js",
+  "libs.1.1.9": "././libs/codemirror/css.js",
+  "libs.1.1.10": "././libs/codemirror/javascript.js",
   "preview": true,
   "settings.matchTags": true,
   "settings.mode": "htmlmixed",
@@ -199,10 +199,10 @@ export const bootstrap = {
 </div>`
   },
   "directly": true,
-  "libs.1.1.5": "./libs/codemirror/xml.js",
-  "libs.1.1.6": "./libs/codemirror/xml-fold.js",
-  "libs.1.1.7": "./libs/codemirror/matchtags.js",
-  "libs.1.1.8": "./libs/codemirror/htmlmixed.js",
+  "libs.1.1.5": "././libs/codemirror/xml.js",
+  "libs.1.1.6": "././libs/codemirror/xml-fold.js",
+  "libs.1.1.7": "././libs/codemirror/matchtags.js",
+  "libs.1.1.8": "././libs/codemirror/htmlmixed.js",
   "preview": `<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">`,
   "settings.matchTags": true,
   "settings.mode": "htmlmixed",
@@ -225,7 +225,7 @@ export const json = {
     "xyz": null
   },
   "directly": true,
-  "libs.1.1.5": "./libs/codemirror/javascript.js",
+  "libs.1.1.5": "././libs/codemirror/javascript.js",
   "settings.mode": { "name": "javascript", "json": true },
   "text": {
     "submit": "Log"
