@@ -11,21 +11,21 @@
 ( () => {
   const component = {
     name: 'code_editor',
-    ccm: '././libs/ccm/ccm.js',
+    ccm: 'https://akless.github.io/ccm-code_editor/versions/v1/libs/ccm/ccm.min.js',
     config: {
       "css": [ "ccm.load",
         [
           [
-            "././libs/codemirror/codemirror.css",
-            "././libs/codemirror/foldgutter.css"
+            "https://akless.github.io/ccm-code_editor/versions/v1/libs/codemirror/codemirror.min.css",
+            "https://akless.github.io/ccm-code_editor/versions/v1/libs/codemirror/foldgutter.min.css"
           ],
-          "././resources/styles.css"
+          "https://akless.github.io/ccm-code_editor/versions/v1/resources/styles.min.css"
         ]
       ],
       "data": {},
       // "directly": true,
-      "helper": [ "ccm.load", { "url": "././libs/ccm/helper.js", "type": "module" } ],
-      "html": [ "ccm.load", { "url": "././resources/templates.js", "type": "module" } ],
+      "helper": [ "ccm.load", { "url": "https://akless.github.io/ccm-code_editor/versions/v1/libs/ccm/helper.min.js", "type": "module" } ],
+      "html": [ "ccm.load", { "url": "https://akless.github.io/ccm-code_editor/versions/v1/resources/templates.min.js", "type": "module" } ],
       "libs": [ "ccm.load",
         [
           "./libs/codemirror/codemirror.js",
@@ -57,7 +57,7 @@
       },
       "shadow": "open",
       "submit": true,
-      "text": [ "ccm.load", { "url": "././resources/resources.js#en", "type": "module" } ]
+      "text": [ "ccm.load", { "url": "https://akless.github.io/ccm-code_editor/versions/v1/resources/resources.min.js#en", "type": "module" } ]
     },
     Instance: function () {
       let $, data, editor;

@@ -1,0 +1,45 @@
+/**
+ * @overview Default layout of <i>ccmjs</i>-based web component for a code editor that uses CodeMirror 5.
+ * @author André Kless <andre.kless@web.de.de> 2023
+ * @license The MIT License (MIT)
+ */
+
+#element {
+  margin: 0.5em;
+  overflow-x: auto;
+}
+
+form {
+  overflow: hidden;
+}
+
+form > div {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax( 45ch, 1fr ) );
+  gap: 0.5em;
+}
+
+.CodeMirror {
+  border: 1px solid #eee;
+  border-radius: 0.5em;
+  height: unset;
+}
+
+.CodeMirror.invalid {
+  background-color: rgba( 255, 0, 0, 0.1 );
+}
+
+button {
+  margin-top: 0.5em;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+#preview {
+  border: 1px solid #eee;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
