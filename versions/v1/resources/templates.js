@@ -4,7 +4,7 @@
  * @license The MIT License (MIT)
  */
 
-import { html, render } from 'https://akless.github.io/ccm-code_editor/versions/v1/../libs/lit/lit.js';
+import { html, render } from 'https://akless.github.io/code_editor/versions/v1/../libs/lit/lit.js';
 export { render };
 
 export function main( app ) {

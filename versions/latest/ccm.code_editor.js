@@ -4,38 +4,38 @@
  * @overview <i>ccmjs</i>-based web component for a code editor that uses CodeMirrow 5.
  * @author André Kless <andre.kless@web.de> 2023
  * @license The MIT License (MIT)
- * @domain https://akless.github.io/ccm-code_editor/
+ * @domain https://akless.github.io/code_editor/
  * @version 1.0.0
  */
 
 ( () => {
   const component = {
     name: 'code_editor',
-    ccm: 'https://akless.github.io/ccm-code_editor/versions/latest/libs/ccm/ccm.min.js',
+    ccm: 'https://akless.github.io/code_editor/versions/latest/libs/ccm/ccm.min.js',
     config: {
       "css": [ "ccm.load",
         [
           [
-            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/codemirror.min.css",
-            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/foldgutter.min.css"
+            "https://akless.github.io/code_editor/versions/latest/libs/codemirror/codemirror.min.css",
+            "https://akless.github.io/code_editor/versions/latest/libs/codemirror/foldgutter.min.css"
           ],
-          "https://akless.github.io/ccm-code_editor/versions/latest/resources/styles.min.css"
+          "https://akless.github.io/code_editor/versions/latest/resources/styles.min.css"
         ]
       ],
       "data": {},
       // "directly": true,
-      "helper": [ "ccm.load", { "url": "https://akless.github.io/ccm-code_editor/versions/latest/libs/ccm/helper.min.js", "type": "module" } ],
-      "html": [ "ccm.load", { "url": "https://akless.github.io/ccm-code_editor/versions/latest/resources/templates.min.js", "type": "module" } ],
+      "helper": [ "ccm.load", { "url": "https://akless.github.io/code_editor/versions/latest/libs/ccm/helper.min.js", "type": "module" } ],
+      "html": [ "ccm.load", { "url": "https://akless.github.io/code_editor/versions/latest/resources/templates.min.js", "type": "module" } ],
       "libs": [ "ccm.load",
         [
-          "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/codemirror.min.js",
+          "https://akless.github.io/code_editor/versions/latest/libs/codemirror/codemirror.min.js",
           [
-            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/autorefresh.min.js",
-            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/brace-fold.min.js",
-            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/closebrackets.min.js",
-            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/foldcode.min.js",
-            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/foldgutter.min.js",
-            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/matchbrackets.min.js"
+            "https://akless.github.io/code_editor/versions/latest/libs/codemirror/autorefresh.min.js",
+            "https://akless.github.io/code_editor/versions/latest/libs/codemirror/brace-fold.min.js",
+            "https://akless.github.io/code_editor/versions/latest/libs/codemirror/closebrackets.min.js",
+            "https://akless.github.io/code_editor/versions/latest/libs/codemirror/foldcode.min.js",
+            "https://akless.github.io/code_editor/versions/latest/libs/codemirror/foldgutter.min.js",
+            "https://akless.github.io/code_editor/versions/latest/libs/codemirror/matchbrackets.min.js"
           ]
         ]
       ],
@@ -57,7 +57,7 @@
       },
       "shadow": "open",
       "submit": true,
-      "text": [ "ccm.load", { "url": "https://akless.github.io/ccm-code_editor/versions/latest/resources/resources.min.js#en", "type": "module" } ]
+      "text": [ "ccm.load", { "url": "https://akless.github.io/code_editor/versions/latest/resources/resources.min.js#en", "type": "module" } ]
     },
     Instance: function () {
       let $, data, editor;
