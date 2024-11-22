@@ -28,14 +28,14 @@
       "html": [ "ccm.load", { "url": "https://akless.github.io/ccm-code_editor/versions/latest/resources/templates.min.js", "type": "module" } ],
       "libs": [ "ccm.load",
         [
-          "./libs/codemirror/codemirror.js",
+          "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/codemirror.min.js",
           [
-            "./libs/codemirror/autorefresh.js",
-            "./libs/codemirror/brace-fold.js",
-            "./libs/codemirror/closebrackets.js",
-            "./libs/codemirror/foldcode.js",
-            "./libs/codemirror/foldgutter.js",
-            "./libs/codemirror/matchbrackets.js"
+            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/autorefresh.min.js",
+            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/brace-fold.min.js",
+            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/closebrackets.min.js",
+            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/foldcode.min.js",
+            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/foldgutter.min.js",
+            "https://akless.github.io/ccm-code_editor/versions/latest/libs/codemirror/matchbrackets.min.js"
           ]
         ]
       ],

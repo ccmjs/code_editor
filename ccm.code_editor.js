@@ -28,14 +28,14 @@
       "html": [ "ccm.load", { "url": "././resources/templates.js", "type": "module" } ],
       "libs": [ "ccm.load",
         [
-          "./libs/codemirror/codemirror.js",
+          "././libs/codemirror/codemirror.js",
           [
-            "./libs/codemirror/autorefresh.js",
-            "./libs/codemirror/brace-fold.js",
-            "./libs/codemirror/closebrackets.js",
-            "./libs/codemirror/foldcode.js",
-            "./libs/codemirror/foldgutter.js",
-            "./libs/codemirror/matchbrackets.js"
+            "././libs/codemirror/autorefresh.js",
+            "././libs/codemirror/brace-fold.js",
+            "././libs/codemirror/closebrackets.js",
+            "././libs/codemirror/foldcode.js",
+            "././libs/codemirror/foldgutter.js",
+            "././libs/codemirror/matchbrackets.js"
           ]
         ]
       ],
