@@ -4,7 +4,7 @@
  * @overview <i>ccmjs</i>-based web component for a code editor that uses CodeMirrow 5.
  * @author André Kless <andre.kless@web.de> 2023
  * @license The MIT License (MIT)
- * @domain https://akless.github.io/ccm-code_editor/
+ * @domain https://akless.github.io/code_editor/
  * @version 1.0.0
  */
 
