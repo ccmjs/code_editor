@@ -1,16 +1,1 @@
-.code-editor {
-  display: block;
-  min-width: 0;
-  font-family: system-ui, sans-serif;
-}
-
-.code-editor-label {
-  margin-bottom: 0.6rem;
-  color: inherit;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.code-editor-mount {
-  min-width: 0;
-}
+.code-editor{min-width:0;font-family:system-ui,sans-serif;display:block}.code-editor-label{color:inherit;margin-bottom:.6rem;font-size:.9rem;font-weight:600}.code-editor-mount{min-width:0}
