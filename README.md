@@ -12,7 +12,41 @@ that server. All runtime dependencies are included in `libs/`; using the compone
 does **not** require Node.js, npm, a build step or an external CDN.
 Opening `index.html` via `file://` does not work.
 
-## Embed
+## Usage with CDN (versioned)
+
+Place this example in the body of an HTML page. The component and its dependencies
+are loaded from the published **v2.0.0** release; no local copies are needed.
+
+```html
+<script
+  src="https://cdn.jsdelivr.net/gh/ccmjs/code_editor@v2.0.0/libs/framework/ccm-28.0.0.min.js"
+  integrity="sha384-HDMeDDgKlR2OFJ3ECMwmA6wknqpfpeCiSZYlUhQaFg9FKrvHJp8MMSwrxibvWJ2G"
+  crossorigin="anonymous"
+></script>
+<div id="editor"></div>
+<script type="module">
+  const editor = await ccm.start(
+    'https://cdn.jsdelivr.net/gh/ccmjs/code_editor@v2.0.0/ccm.code_editor-2.0.0.min.mjs#sha384-nFtZLWzbVpSnM3fTVUYMfH48I73b54fZ3qkm4Gce7cOmtmIjNWxtd6khqGKJV4U9',
+    {
+      language: 'java',
+      label: 'Solution.java',
+      ariaLabel: 'Java source code',
+      value: 'public class Solution {\n}\n'
+    },
+    document.querySelector('#editor')
+  );
+
+  console.log(editor.getValue());
+</script>
+```
+
+The browser checks the framework's `integrity` attribute; ccmjs checks the
+component's `#sha384-...` URL fragment. The component hash covers its main module,
+including the source map comment, but not its dependencies. Update each versioned
+URL and its matching hash together when changing releases. The same component URL,
+including its hash, can also be used in a `ccm.instance` dependency.
+
+## Embed locally
 
 The source component declares resource URLs as plain `././...` strings, matching
 the other ccmjs components. During local development, `ccm.load` paths are relative
